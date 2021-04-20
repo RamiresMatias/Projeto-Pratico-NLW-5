@@ -7,3 +7,4 @@ Projeto prático criado durante as aulas NLW#5 - Trilha NodeJs. Utilizando as te
 - NodeJs
 - TypeORM
 - SQLite
+- Yarn
