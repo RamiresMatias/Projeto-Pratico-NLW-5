@@ -3,7 +3,7 @@ import { Message } from "../entities/Message"
 import { MessagesRepository } from "../repositories/MessagesRepository"
 
 interface IMessageCreate{
-    admin_id?: string; // O '?' antes do ponto e vírgula, significa que esse atributo é opcional
+    admin_id?: string; 
     text:string;
     user_id: string;
 }
