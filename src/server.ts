@@ -1,11 +1,4 @@
-import express from "express"
-import "./database" 
-const app = express()
+import {http} from "./http" 
+import "./websocket/client"
 
-import { routes } from "./routes/routes"
-
-app.use(express.json())
-
-app.use(routes)
-
-app.listen(3333, ()=> console.log("\n ----- SERVIDOR RODANDO ----- \n"))
+http.listen(3333, ()=> console.log("\n ----- SERVIDOR RODANDO NA PORTA : 3333 ----- \n"))
