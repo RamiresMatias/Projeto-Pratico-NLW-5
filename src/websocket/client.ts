@@ -37,10 +37,14 @@ io.on("connect", (socket)=>{
             await connectionService.create(connection)
         }
 
+         //Salvar a conexão com o socket_id, user_id
         await messageService.create({
             text,
             user_id: user.id,
         })
-        //Salvar a conexão com o socket_id, user_id
+        
+        const allMessages = await messageService.listByUser(user.id)
+
+        socket.emit("client_list_all_messages", allMessages)
     })
 })
