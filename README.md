@@ -8,3 +8,4 @@ Projeto prático criado durante as aulas NLW#5 - Trilha NodeJs. Utilizando as te
 - TypeORM
 - SQLite
 - Yarn
+- Web Socket(Socket.io)
