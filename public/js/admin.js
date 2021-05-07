@@ -1,9 +1,11 @@
 const socket = io()
 
 let connectionsUsers = []
+let connectionAdmin = []
 
 socket.on("admin_list_all_users", connections =>{
     connectionsUsers = connections
+    connectionAdmin.push(connections)
     document.getElementById("list_users").innerHTML = ""
 
     let template = document.getElementById("template").innerHTML
@@ -89,9 +91,14 @@ function sendMessage(id){
 
 socket.on("admin_receive_message", data =>{
 
+    connectionAdmin.forEach(connections =>{
+        if(connections.length > 0){
+            connectionsUsers = connections
+        }
+    })
     
     const connection = connectionsUsers.find(connection => connection.socket_id = data.socket_id)
-    console.log(connection);
+    
     const createDiv = document.createElement("div")
     const divMessages = document.getElementById(`allMessages${connection.user_id}`)
 
